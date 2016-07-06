@@ -3,13 +3,14 @@
   group: AHS_INT
   id: bbe729d4-9979-476f-aa29-e485c8528d0f
   loglevel: INFO
+  multipleExecutions: true
   name: Job-1_1
   nodefilters:
     dispatch:
       excludePrecedence: true
       keepgoing: false
       rankOrder: ascending
-      threadcount: 1
+      threadcount: 2
     filter: .*
   nodesSelectedByDefault: true
   notification:
