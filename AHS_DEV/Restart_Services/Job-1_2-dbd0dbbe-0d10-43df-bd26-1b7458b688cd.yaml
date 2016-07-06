@@ -1,0 +1,24 @@
+- description: test job
+  executionEnabled: true
+  group: AHS_DEV/Restart_Services
+  id: dbd0dbbe-0d10-43df-bd26-1b7458b688cd
+  loglevel: INFO
+  name: Job-1_2
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: uname -a
+    - script: |-
+        sleep 10 
+
+        tree /home/parallels/rundeck1/projects/rundeck/scm/
+
+        sleep 10 
+
+        df -h
+
+        ls -la /home/*
+    keepgoing: false
+    strategy: node-first
+  uuid: dbd0dbbe-0d10-43df-bd26-1b7458b688cd
+

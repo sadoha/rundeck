@@ -1,0 +1,24 @@
+- description: test job
+  executionEnabled: true
+  group: AHS_DEV
+  id: 73ec0b54-afb7-4c93-a9b7-b08e503e00fc
+  loglevel: INFO
+  name: Job-1_1
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: uname -a
+    - script: |-
+        sleep 10 
+
+        tree /home/parallels/rundeck1/projects/rundeck/scm/
+
+        sleep 10 
+
+        df -h
+
+        ls -la /home/*
+    keepgoing: false
+    strategy: node-first
+  uuid: 73ec0b54-afb7-4c93-a9b7-b08e503e00fc
+

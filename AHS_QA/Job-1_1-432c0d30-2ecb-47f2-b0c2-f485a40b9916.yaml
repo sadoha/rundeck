@@ -1,0 +1,37 @@
+- description: test job
+  executionEnabled: true
+  group: AHS_QA
+  id: 432c0d30-2ecb-47f2-b0c2-f485a40b9916
+  loglevel: INFO
+  name: Job-1_1
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: false
+      rankOrder: ascending
+      threadcount: 1
+    filter: .*
+  nodesSelectedByDefault: true
+  notification:
+    onsuccess:
+      email:
+        attachLog: true
+        recipients: andrii.sadovskyi@gmail.com
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: uname -a
+    - script: |-
+        sleep 10 
+
+        tree /home/parallels/rundeck1/projects/rundeck/scm/
+
+        sleep 10 
+
+        df -h
+
+        ls -la /home/*
+    keepgoing: false
+    strategy: node-first
+  uuid: 432c0d30-2ecb-47f2-b0c2-f485a40b9916
+
